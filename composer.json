@@ -1,0 +1,20 @@
+{
+    "name": "symfony/csSettingsPlugin",
+    "type": "symfony-plugin",
+    "description": "plugin for storing project settings in DB",
+    "keywords": ["quadrata", "plugin", "settings"],
+    "homepage": "https://github.com/enl/csSettingsPlugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alexander Panshin",
+            "email": "alex@quadrata.ru",
+            "homepage": "",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.2.4",
+        "quadrata/plugin-installer": "*",
+    }
+}
