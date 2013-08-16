@@ -30,8 +30,13 @@ class BasecsSettingActions extends AutocsSettingActions
         foreach($this->form->getValues() as $slug => $value)
         {
           $setting = Doctrine::getTable('csSetting')->findOneBySlug($slug);
-          if ($setting) 
+          if ($setting)
           {
+            // fix for saving null upload over existing value
+            if ('upload'==$setting->getType() && $setting->getValue() && is_null($value)){
+              continue;
+          }
+
             // https://github.com/bshaffer/csSettingsPlugin/issues/8 workaround
             if (!is_array($value) && (string) $value != 'Array') {
               $setting->setValue($value);
